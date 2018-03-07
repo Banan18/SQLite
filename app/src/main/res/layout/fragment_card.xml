@@ -1,0 +1,83 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+
+    <EditText
+        android:id="@+id/editTextCard"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentTop="true"
+        android:layout_marginLeft="10dp"
+        android:layout_marginStart="10dp"
+        android:layout_marginTop="16dp"
+        android:ems="10"
+        android:hint="Номер карты"
+        android:inputType="number" />
+
+    <EditText
+        android:id="@+id/editTextIdView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignLeft="@+id/editTextCard"
+        android:layout_alignStart="@+id/editTextCard"
+        android:layout_below="@+id/editTextCard"
+        android:layout_marginTop="11dp"
+        android:ems="10"
+        android:hint="ID вида карты"
+        android:inputType="number" />
+
+    <EditText
+        android:id="@+id/editTextIdOwner"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignLeft="@+id/editTextIdView"
+        android:layout_alignStart="@+id/editTextIdView"
+        android:layout_below="@+id/editTextIdView"
+        android:layout_marginTop="12dp"
+        android:ems="10"
+        android:hint="ID владельца"
+        android:inputType="number" />
+
+    <include
+        layout="@layout/button_first"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignLeft="@+id/editTextIdOwner"
+        android:layout_alignStart="@+id/editTextIdOwner"
+        android:layout_below="@+id/editTextIdOwner"
+        android:id="@+id/include3" />
+
+    <EditText
+        android:id="@+id/editTextIdCard"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignLeft="@+id/include3"
+        android:layout_alignStart="@+id/include3"
+        android:layout_below="@+id/include3"
+        android:layout_marginTop="12dp"
+        android:ems="10"
+        android:hint="ID изменить, удалить"
+        android:inputType="number" />
+
+    <include
+        layout="@layout/button_second"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignLeft="@+id/editTextIdCard"
+        android:layout_alignStart="@+id/editTextIdCard"
+        android:layout_below="@+id/editTextIdCard"
+        android:id="@+id/include4" />
+
+    <TextView
+        android:id="@+id/textView2"
+        android:layout_width="wrap_content"
+        android:layout_height="100dp"
+        android:layout_alignLeft="@+id/include4"
+        android:layout_alignParentBottom="true"
+        android:layout_alignStart="@+id/include4"
+        android:layout_below="@+id/include4" />
+</RelativeLayout>
