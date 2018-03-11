@@ -122,7 +122,7 @@ public class OwnerFragment extends Fragment implements View.OnClickListener {
         switch (v.getId()) {
             case R.id.buttonAdd:
 
-                if (checkEditFioNumber()) {
+                if (checkEditAdd()) {
                     owner = new Owner(editTextFIO.getText().toString(),
                             editTextNumber.getText().toString());
                     owner.save();
@@ -153,7 +153,7 @@ public class OwnerFragment extends Fragment implements View.OnClickListener {
 
             case R.id.buttonUpdate:
 
-                if (checkEditFioNumber() && checkEditID() && checkId()) {
+                if (checkEditAdd() && checkEditID() && checkID()) {
                     owner.fio = editTextFIO.getText().toString();
                     owner.number = editTextNumber.getText().toString();
                     owner.save();
@@ -165,7 +165,7 @@ public class OwnerFragment extends Fragment implements View.OnClickListener {
 
             case R.id.buttonDelete:
 
-                if (checkEditID() && checkId() && checkIdCard()) {
+                if (checkEditID() && checkID() && checkIdCard()) {
                     owner.delete();
                     allOwner = Owner.listAll(Owner.class);
                     textView.setText(allOwner.toString());
@@ -175,8 +175,8 @@ public class OwnerFragment extends Fragment implements View.OnClickListener {
 
     }
 
-    // проверка пустые ли едиты
-    private boolean checkEditFioNumber() {
+    // проверка пустые ли едиты добавления
+    private boolean checkEditAdd() {
         if (editTextFIO.length() != 0 && editTextNumber.length() != 0) {
             return true;
         } else
@@ -196,7 +196,7 @@ public class OwnerFragment extends Fragment implements View.OnClickListener {
     }
 
     // проверка существует ли id
-    public boolean checkId() {
+    public boolean checkID() {
         int id = Integer.parseInt(editTextID.getText().toString());
         owner = Owner.findById(Owner.class, id);
 

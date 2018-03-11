@@ -115,7 +115,7 @@ public class CardFragment extends Fragment implements View.OnClickListener {
         switch (v.getId()) {
             case R.id.buttonAdd:
 
-                if (checkEditNull() && checkIdView() && checkIdOwner()) {
+                if (checkEditAdd() && checkIdView() && checkIdOwner()) {
                     card = new Card(Integer.valueOf(editTextCard.getText().toString()),
                             viewCard, owner);
                     card.save();
@@ -143,7 +143,7 @@ public class CardFragment extends Fragment implements View.OnClickListener {
 
             case R.id.buttonUpdate:
 
-                if (checkEditNull() && checkIdView() && checkIdOwner() &&
+                if (checkEditAdd() && checkIdView() && checkIdOwner() &&
                         checkEditID() && checkId()) {
                     card.number = Integer.parseInt(editTextCard.getText().toString());
                     card.viewCard = viewCard;
@@ -167,8 +167,8 @@ public class CardFragment extends Fragment implements View.OnClickListener {
 
     }
 
-    // проверка пустоты едитов
-    private boolean checkEditNull() {
+    // проверка пустоты едитов добавления
+    private boolean checkEditAdd() {
         if (editTextCard.length() != 0 && editTextIdView.length() != 0 &&
                 editTextIdOwner.length() != 0) {
             return true;
@@ -204,7 +204,7 @@ public class CardFragment extends Fragment implements View.OnClickListener {
         return false;
     }
 
-    // проверка едита id а пустоту
+    // проверка едита id на пустоту
     private boolean checkEditID() {
         if (editTextIdCard.length() != 0) {
             return true;

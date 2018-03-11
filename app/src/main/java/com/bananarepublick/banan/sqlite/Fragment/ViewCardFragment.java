@@ -118,7 +118,7 @@ public class ViewCardFragment extends Fragment implements View.OnClickListener {
         switch (v.getId()) {
             case R.id.buttonAdd:
 
-                if (checkEditNameSale()) {
+                if (checkEditAdd()) {
                     viewCard = new ViewCard(editTextName.getText().toString(),
                             Integer.valueOf(editTextSale.getText().toString()));
                     viewCard.save();
@@ -149,7 +149,7 @@ public class ViewCardFragment extends Fragment implements View.OnClickListener {
 
             case R.id.buttonUpdate:
 
-                if (checkEditNameSale() && checkEditID() && checkID()) {
+                if (checkEditAdd() && checkEditID() && checkID()) {
                     viewCard.name = editTextName.getText().toString();
                     viewCard.sale = Integer.parseInt(editTextSale.getText().toString());
                     viewCard.save();
@@ -171,8 +171,8 @@ public class ViewCardFragment extends Fragment implements View.OnClickListener {
 
     }
 
-    // проверка на пустые едиты
-    private boolean checkEditNameSale() {
+    // проверка на пустые едиты добюавления
+    private boolean checkEditAdd() {
         if (editTextName.length() != 0 && editTextSale.length() != 0) {
 
             int value = Integer.parseInt(editTextSale.getText().toString());
